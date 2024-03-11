@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="registerStyle.css">
+    <style>
+        #canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+    <script src="register.js" defer></script> <!-- Link to external JavaScript file -->
+</head>
+<body>
+    
+    <div class="register-container">
+        <h2>Create Account</h2>
+        <form id="registerForm" onsubmit="return validateForm()">
+            <div class="input-group">
+                <label for="yourname">Your name:</label>
+                <input type="text" id="yourname" name="yourname" placeholder="First and last name" required>
+                <span id="name-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <label for="mobile-number">Mobile number:</label>
+                <input type="tel" id="mobile-number" name="mobile-number" placeholder="Mobile number" required oninput="validateMobile()">
+                <span id="mobile-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="At least 6 characters" required>
+                <span id="password-error" class="error-message"></span>
+            </div>
+            <div class="sign-in">
+                <label>Already have an account?<a href="login.html"> Sign in</a></label>
+            </div>
+            <button type="submit"><a href="home.html"></a>Register</button>
+        </form>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="myCanvas" width="100%" height="100%" style="border:1px solid rgb(0, 0, 0);"></canvas>
+    </div>
+
+</body>
+</html>
